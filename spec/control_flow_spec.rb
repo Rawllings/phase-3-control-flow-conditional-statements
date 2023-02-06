@@ -7,6 +7,16 @@ describe '#admin_login' do
     expect(admin_login('admin', '12345')).to eq('Access granted')
   end
   
+  #ADMIN LOGIN
+
+def admin_login(username, password)
+  if (username == 'admin' || username == "ADMIN") && password == '12345'
+    "Access granted"
+  else 
+   "Access denied"
+  end
+end
+
   it 'returns "Access granted" if the username is "ADMIN" and the password is "12345"' do
     expect(admin_login('ADMIN', '12345')).to eq('Access granted')
   end
@@ -39,6 +49,35 @@ describe '#hows_the_weather' do
 
 end
 
+#WEATHER
+
+def hows_the_weather temperatures
+  if temperatures < 40
+    "It's brisk out there!"
+  elsif temperatures >= 40 && temperatures < 65
+    "It's a little chilly out there!"
+  elsif temperatures > 85
+    "It's too dang hot out there!"
+  else 
+    "It's perfect out there!"
+  end
+end
+
+
+#FIZBUZ
+
+def fizzbuzz num
+  if num % 3 == 0 && num % 5 == 0
+    "FizzBuzz"
+    elsif num % 3 == 0
+      "Fizz"
+      elsif  num % 5 == 0
+        "Buzz"
+        else
+          num
+        end
+end
+
 describe '#fizzbuzz' do
   
   it 'returns "FizzBuzz" when the input is a multiple of 3 and 5' do
@@ -62,6 +101,25 @@ describe '#fizzbuzz' do
   end
 
 end
+
+#CALCULATORS
+
+def calculator (operation, a, b)
+  case operation
+  when ("+")
+    a + b
+  when "-"
+    a - b
+  when "*"
+    a * b
+  when "/"
+    a / b
+  else
+   puts "Invalid operation!"
+  end
+end
+
+
 
 describe '#calculator' do
   
