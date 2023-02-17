@@ -106,12 +106,19 @@ end
 
 def calculator (operation, a, b)
   case operation
+    # addition
   when ("+")
     a + b
+
+    # subtraction
   when "-"
     a - b
+
+    # multiplication
   when "*"
     a * b
+
+    # division 
   when "/"
     a / b
   else
